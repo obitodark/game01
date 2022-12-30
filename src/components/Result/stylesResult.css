@@ -1,0 +1,26 @@
+.container-result {
+  display: flex;
+
+  position: relative;
+
+  justify-content: center;
+  /* border: 1px solid red; */
+}
+.container-btn {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 480px) {
+  .container-btn {
+    order: 3;
+    padding: 50px;
+  }
+  .container-result {
+    flex-wrap: wrap;
+  }
+}

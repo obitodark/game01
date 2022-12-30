@@ -1,0 +1,14 @@
+.element {
+  background: white;
+  margin: 30px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 7px 0 0 #babfd3, 0 0 0 20px #d02f4a, 0 12px 0 18px #9d1534;
+}
+.element:hover {
+  background: aqua;
+}
