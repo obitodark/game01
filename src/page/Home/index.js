@@ -19,11 +19,14 @@ export const stylesRules = {
   color: "white",
   cursor: "pointer",
   margin: "0 50px",
+  position: "absolute",
+  bottom: "150px",
 };
 
 const Home = () => {
   const [index, setIndex] = useState(null);
   const [bandera, setBandera] = useState(false);
+  const [store, setStore] = useState(0);
 
   const elements = [
     <ViewElement
@@ -62,12 +65,13 @@ const Home = () => {
       <div className="container">
         <ViewModal status={status} setStatus={setStatus} />
 
-        <ViewContainerStore />
+        <ViewContainerStore store={store} />
         {bandera ? (
           <ViewResult
             index={index}
             elements={elements}
             setBandera={setBandera}
+            setStore={setStore}
           />
         ) : (
           <div className="container-element">

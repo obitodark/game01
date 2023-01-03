@@ -13,14 +13,14 @@ export const styles = {
   marginTop: "50px",
 };
 
-const ContainerStore = () => {
+const ContainerStore = ({ store }) => {
   return (
     <div style={styles}>
       <div>
         <img src={logo} alt="" />
       </div>
       <div>
-        <Score />
+        <Score store={store} />
       </div>
     </div>
   );

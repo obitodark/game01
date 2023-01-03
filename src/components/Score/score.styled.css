@@ -1,0 +1,29 @@
+.score {
+  background: white;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  width: 130px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.score h1 {
+  font-size: 60px;
+  padding: 0;
+  margin: 0;
+  font-weight: 900;
+  color: #565365;
+  margin: -18px;
+}
+@media only screen and (max-width: 480px) {
+  .score {
+    width: 100px;
+    height: 100px;
+  }
+  .score > h1 {
+    margin: -18px;
+    font-size: 50px;
+  }
+}

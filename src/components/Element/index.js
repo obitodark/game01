@@ -23,7 +23,8 @@ const Element = ({
   setBandera,
 }) => {
   const handleSelect = (e) => {
-    setIndex(value);
+    if (!bandera) setIndex(value);
+
     setBandera(true);
     return console.log("code ", value);
   };
@@ -77,6 +78,7 @@ const Element = ({
 
     // animation: ${mover} 1s ease-in infinite alternate;
   `;
+
   return (
     <Elements onClick={handleSelect} color={color} colorShadow={colorShadow}>
       <img src={image} alt="" />

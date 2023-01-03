@@ -43,28 +43,48 @@ export const Container = styled.div`
   z-index: 2;
 `;
 
-const Result = ({ elements, index, setBandera }) => {
+const Result = ({ elements, index, setBandera, setStore }) => {
   const [textStatus, setTextStatus] = useState("");
   const [houseValue, setHouseValue] = useState(null);
 
   const getRandom = (max) => {
     const value = Math.floor(Math.random() * max);
-    gameLogic(index, value);
+
     setHouseValue(value);
+    gameLogic(index, value);
+    if (textStatus === "you win") {
+      console.log("you win");
+    }
     return value;
   };
   const handleBack = () => {
     setBandera(false);
   };
 
-  const gameLogic = (user, house) => {
+  const addStore = async () => {
+    const store = 1 + Number(localStorage.getItem("store"));
+    await localStorage.setItem("store", store);
+
+    const value = Number(localStorage.getItem("store"));
+    await setStore(value);
+  };
+  const gameLogic = async (user, house) => {
     const value = user + house;
-    if (user === house) return setTextStatus("it is tie");
+    if (user === house) {
+      return setTextStatus("it is tie");
+    }
+
     if (user > house) {
-      if (value === 2) return setTextStatus("you lose");
+      if (value === 2) {
+        return setTextStatus("you lose");
+      }
+      await addStore();
       return setTextStatus("you win");
     } else {
-      if (value === 2) return setTextStatus("you win");
+      if (value === 2) {
+        await addStore();
+        return setTextStatus("you win");
+      }
       return setTextStatus("you lose");
     }
   };

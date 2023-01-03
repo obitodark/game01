@@ -1,30 +1,10 @@
-export const styles = {
-  background: "white",
-  borderRadius: "10px",
-  border: "none",
-  padding: "10px",
-  width: "130px",
-  height: "100px",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-};
+import "./score.styled.css";
 
-const Score = () => {
+const Score = ({ store }) => {
   return (
-    <div style={styles}>
+    <div className="score">
       <h2 style={{ padding: 0, margin: 0, fontWeight: 500 }}> score</h2>
-      <h1
-        style={{
-          fontSize: "60px",
-          padding: 0,
-          margin: 0,
-          fontWeight: 900,
-          color: "#565365",
-        }}
-      >
-        12
-      </h1>
+      <h1>{store}</h1>
     </div>
   );
 };

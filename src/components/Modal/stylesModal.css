@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .container-modal {
   position: absolute;
   top: 0;
@@ -14,7 +17,9 @@
 .container-modal > div:first-child {
   background: #ffffff;
   border-radius: 10px;
-  padding: 20px 40px;
+  padding: 30px;
+  margin: 20px 0px;
+  box-sizing: border-box;
 }
 .header-modal {
   display: flex;
